@@ -5,23 +5,16 @@ const assertEqual = function(actual, expected) {
     console.log(`🙅🏻‍♂️🙅🏻‍♂️🙅🏻‍Assertion Failed: ${actual} !== ${expected}.`);
   }
 };
-//loop through the elements, to then loop through the keys, the callback already makes the comparison
+
 function findKey(object, callback) {
   for(properties in object) {
    let innerProperty = object[properties];
-  //  for (keys in innerProperty) {
-  //    let innerKeys = innerProperty[keys];
       if (callback(innerProperty)) {
         return properties
       }
   //  } 
    } return undefined
   }
-
-  //objCall.forEach((callback) => {
-    //  return objCall[i];   // execute callback
-
-  
 
 
 assertEqual(findKey({
@@ -33,5 +26,3 @@ assertEqual(findKey({
   "Akelarre":  { stars: 3 }
 }, x => x.stars === 2), "noma");
 
-// assertEqual(findKey(bestTVShowsByGenre, "The Wire"), "drama");
-// assertEqual(findKey(bestTVShowsByGenre, "That '70s Show"), undefined);
