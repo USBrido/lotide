@@ -1,8 +1,7 @@
 const assertEqual = require('./assertEqual');
-
+ 
 const tail = function(words) {
-  let count = words.slice(1);
-  return count;
+  return words.slice(1);
 };
 
 module.exports = tail;
